@@ -1,0 +1,40 @@
+
+<html>
+<head>
+<title>AJAX WITH PHP AND MYSQL</title>
+<script type ="text/javascript" src="jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+$('#load').click(function(event){
+ event.preventDefault();
+$.ajax({
+url: "load.php",
+
+//as we are not sending any kind of data so no need to specify method and data
+//method: "post",
+//data: $('form').serialize(),
+dataType: "html",
+success: function(strDate)
+{
+$('#result').html(strDate)
+}
+
+})
+})
+})
+</script>
+</head>
+
+<body>
+<h3>AJAX WITH PHP AND MYSQL</h3>
+
+<div style="background-color:lightblue; width:300px; margin:10 auto">
+<form method="POST">
+<table cellpadding="5" cellspacing="5">
+<tr><td><input type="submit" name="load" id="load" value="Submit"></td></tr>
+</table>
+</form>
+</div>
+<div id="result">Result</div>
+</body>

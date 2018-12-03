@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>AJAX WITH PHP AND MYSQL</title>
+<script type ="text/javascript" src="js/jquery-3.3.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+
+$.ajax({
+url: "data.php",
+data: "",
+dataType: "text",
+success: function(strDate)
+{
+$('#show_date').text(strDate)
+}
+
+})
+})
+</script>
+</head>
+
+<body>
+<h3>AJAX WITH PHP AND MYSQL</h3>
+
+<div id="show_date" style="background-color:lightblue">
+
+
+</div>
+</body>
+</html> 
